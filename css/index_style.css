@@ -1,0 +1,37 @@
+body{
+    width: 80%;
+    margin: 50px 100px 0px 170px;
+}
+.box-search {
+
+    background-position: 10px 10px;
+    width: calc(100% - 60px);
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin: 12px 0 12px 0;
+  }
+  
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  td {
+    text-align: center;
+    padding: 12px;
+  }
+  
+  tr {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+  }
+
+  .btn{
+    margin: 0px 5px;
+  }
+  
+ 

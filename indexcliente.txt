@@ -1,0 +1,63 @@
+<?php
+    include_once('config.php');
+
+    $sql = "SELECT * FROM clientes ORDER BY id";
+
+    $result = $conexao->query($sql);
+
+    $index = 'indexCliente.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index_style.css">
+</head>
+<tbody>
+    <input type="text" class="box-search" placeholder="Pesquisar Clientes" id="pesquisar">
+
+    <table class="table">
+<thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" visibility: hidden>Nome </th>
+        <th scope="col">Chamado</th>
+        <th scope="col">Urgencia</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Status</th>
+        <th scope="col">Ultima Atualização</th>
+        <th scope="col">...</th>
+        <th scope="col"><button onclick="chamado()">+</button></th>
+        <th scope="col"><button >?</button></th>
+    </tr>
+</thead>
+<tbody>
+        <?php
+
+        while($user_data = mysqli_fetch_assoc($result)){
+            echo "<tr>";
+            echo "<td>" . $user_data['id'] . "</td>";
+            echo "<td visibility: hidden>" . $user_data['nome'] . "</td>";
+            echo "<td>" . "#". $user_data['chamado'] . "</td>";
+            echo "<td>" . $user_data['urgencia'] . "</td>";
+            echo "<td>" . $user_data['descricao'] . "</td>";
+            echo "<td>" . $user_data['estatus'] . "</td>";
+            echo "<td>" . $user_data['ultima_atualizacao'] . "</td>";
+            echo "<td>"."<a href='{#}'>Atualizar</a>" . "</td>";
+            echo "<td>"."<a href='{#}'>Editar</a>" . "</td>";
+            echo "<tr>";
+            }
+        ?>
+</tbody>
+
+    </table>
+</tbody>
+
+<script src="js/index.js"></script>
+
+
+</html>
